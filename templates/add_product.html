@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid midnightblue;
+  text-align: left;
+  padding: 10px;
+
+}
+
+tr:nth-child(even) {
+  background-color: SlateGray;
+}
+</style>
+<style>
+.newspaper {
+  column-count: 2;
+
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Product Details</title>
+
+</head>
+<body>
+<body style="background-color:gray">
+<div  style="column-gap: 60px;background color:gray;color:white;">
+<p style="text-align:center;color:white; font-size:50px;text-decoration: block;" ><u> Add Product</u></p>
+    <h2 style="text-align:center;color:red">{{result}}</h2>
+
+    <form action ="/add_product" method="post">
+        <div class="newspaper">
+
+    <h1 style="text-align:center;color:midnightblue;"> Product Id <input style="border:3px solid midnightblue;" type="number" name = "id"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Product Name <input style="border:3px solid midnightblue;" type="text" name = "name"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Product Price <input style="border:3px solid midnightblue;" type="text" name = "price"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;padding:25px;"> Product Quantity <input style="border:3px solid midnightblue;" type="number" name= "quantity"><br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Product Vendor <input style="border:3px solid midnightblue;" type="text" name = "vendor"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Product Category <input style="border:3px solid midnightblue;" type="text" name = "category"><br></br></h1>
+    </div>
+
+
+    <h1 style="text-align:center;font-size:30px"><input type="Submit" style="font-size:30px; background-color:AliceBlue; color: midnightblue; width:140px;height:40px;"></h1>
+    </form>
+    </div>
+    <p style="text-align:center;color:midnightblue; font-size:30px;text-decoration: block;" ><u> Product List</u></p>
+
+<table>
+
+  <tr>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>S.No</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product_Id</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product name</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Price</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Quantity</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Vendor</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Category</b></th>
+  </tr>
+    <tbody>
+        {%for prod in result1 %}
+        <tr>
+            <td style="color:white;text-align:center" >{{prod.prod_S_NO}} </td>
+            <td style="color:white;text-align:center" >{{prod.product_id}} </td>
+            <td style="color:white;text-align:center" >{{prod.name}}</td>
+            <td style="color:white;text-align:center" >{{prod.price}}</td>
+            <td style="color:white;text-align:center">{{prod.quantity}}</td>
+            <td style="color:white;text-align:center">{{prod.vendor}}</td>
+            <td style="color:white;text-align:center">{{prod.category}}</td>
+        </tr>
+    {% endfor%}
+</tbody>
+</table>
+<h3 style="text-align:right;color:midnightblue; font-size:30px"><a href="/home_page">Back</a></h3>
+<h3 style="text-align:right;color:midnightblue; font-size:30px"><a href="/logout">Logout</a></h3>
+
+</body>
+</body>
+</html>

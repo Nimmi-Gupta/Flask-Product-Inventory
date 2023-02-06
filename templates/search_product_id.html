@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid midnightblue;
+  text-align: left;
+  padding: 10px;
+
+}
+
+tr:nth-child(even) {
+  background-color: SlateGray;
+}
+</style>
+<style>
+.newspaper {
+  column-count: 2;
+
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Search Product</title>
+</head>
+<body style="background-color:gray">
+<h1 style="text-align:center;color:midnightblue; font-size:50px" ><u>Search Product </u></h1>
+<h2 style="text-align:center;color:red">{{result}}</h2>
+
+<form action ="/search_product_id" method="post">
+    <h1 style="text-align:center;color:midnightblue;">Entre the Product Id <input style="border:3px solid midnightblue;" type="integer" name = "id"><br></br></h1>
+<!--    <h1 style="text-align:center;color:midnightblue;"> Or </h1>-->
+<!--    <h1 style="text-align:center;color:midnightblue;">Entre the Product Name <input style="border:3px solid midnightblue;" type="integer" name = "name"><br></br></h1>-->
+    <h1 style="text-align:center;font-size:30px"><input type="Submit" style="font-size:30px; background-color:AliceBlue; color: midnightblue; width:140px;height:40px;"></h1>
+</form>
+<p style="text-align:center;color:midnightblue; font-size:35px;text-decoration: block;" ><u><b>Product List</b> </u></p>
+
+<table>
+
+  <tr>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>S.No</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product_Id</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product name</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Price</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Quantity</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite "><b>Product Vendor</b></th>
+    <th style="text-align:center;" bgcolor="FloralWhite"><b>Product Category</b></th>
+  </tr>
+    <tbody>
+        {%for prod in result1 %}
+        <tr>
+        <td style="color:white;text-align:center" >{{prod.prod_S_NO}} </td>
+        <td style="color:white;text-align:center" >{{prod.product_id}} </td>
+        <td style="color:white;text-align:center" >{{prod.name}}</td>
+        <td style="color:white;text-align:center" >{{prod.price}}</td>
+        <td style="color:white;text-align:center">{{prod.quantity}}</td>
+        <td style="color:white;text-align:center">{{prod.vendor}}</td>
+        <td style="color:white;text-align:center">{{prod.category}}</td>
+          </tr>
+    {% endfor%}
+</tbody>
+</table>
+
+
+<h3 style="text-align:right;color:midnightblue; font-size:30px"><a href="/search_product">Back</a></h3>
+<h3 style="text-align:right;color:midnightblue; font-size:30px"><a href="/logout">Logout</a></h3>
+
+</body>
+</html>

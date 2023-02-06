@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+.newspaper {
+  column-count: 2;
+
+}
+</style>
+    <meta charset="UTF-8">
+    <title>Home Page </title>
+
+</head>
+<body style="background-color:grey">
+<div  style="column-gap: 60px;background color:CornflowerBlue;color:white;">
+<p style="text-align:center;color:white; font-size:50px;text-decoration: block;" > Registration Page</p>
+    <h2 style="text-align:center;color:red">{{result}}</h2>
+
+    <form action ="/user/registration" method="post">
+    <div class="newspaper">
+    <p class="small"><h1 style="text-align:center;color:midnightblue;"> First Name: <input style="border:3px solid midnightblue;" type="text" name = "firstname"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Last Name: <input style="border:3px solid midnightblue;" type="text" name = "lastname"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Contact: <input style="border:3px solid midnightblue;" type="biginteger" name = "contact"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Address: <input style="border:3px solid midnightblue;" type="text" name = "address"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> DOB: <input style="border:3px solid midnightblue;" type="text" name = "dob"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Age: <input style="border:3px solid midnightblue;" type="text" name = "age"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Email ID: <input style="border:3px solid midnightblue;" type="text" name = "emailid"><br></br></h1>
+    <p class="small"><h1 style="text-align:center;color:midnightblue;"> Password: <input style="border:3px solid midnightblue;" type="password" name = "password"><br></br></h1>
+    <p class="small"><h1 style="text-align:center;color:midnightblue;"> Confirm Password : <input style="border:3px solid midnightblue;" type="password" name = "confirm_password"><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> Gender: <Select style="border:3px solid midnightblue;" name ="gender">
+<!--        <option value=""></option>-->
+            <option value="Male">Male</option>
+           <option value="Female">Female</option></select><br></br></h1>
+
+    <h1 style="text-align:center;color:midnightblue;"> Country: <select style="border:3px solid midnightblue;" name ="country">
+<!--        <option value=""></option>-->
+           <option value="India">India</option>
+           <option value="Canada">Canada</option>
+           <option value="USA">USA</option>
+           <option value="UK">UK</option>
+           </select><br></br></h1>
+    <h1 style="text-align:center;color:midnightblue;"> City: <select style="border:3px solid midnightblue;" name ="city">
+<!--        <option value=""></option>-->
+           <option value="Pune">Pune</option>
+           <option value="Dehli">Dehli</option>
+           <option value="Mumbai">Mumbai</option>
+           <option value="Lucknow">Lucknow</option>
+           </select><br></br></h1>
+        </div>
+
+    <h1 style="text-align:center;font-size:30px"><input type="Submit" style="font-size:30px; background-color:AliceBlue; color: midnightblue; width:140px;height:40px;"></h1>
+<p style="text-align:center;color:midnightblue;font-size:20px">Already a member? <a href="/">Login Here</a></p>
+    </form>
+
+</div>
+</body>
+</html>
